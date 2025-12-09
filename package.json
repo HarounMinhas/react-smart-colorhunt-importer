@@ -1,0 +1,19 @@
+{
+  "name": "react-smart-colorhunt-importer",
+  "version": "1.0.0",
+  "description": "A smart React module to parse ColorHunt URLs with visual feedback.",
+  "main": "src/ColorHuntImporter.jsx",
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "keywords": [
+    "react",
+    "colorhunt",
+    "palette",
+    "color-picker",
+    "parser"
+  ],
+  "author": "Haroun Minhas",
+  "license": "MIT"
+}
