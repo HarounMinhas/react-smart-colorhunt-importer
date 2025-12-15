@@ -81,7 +81,7 @@ const PaletteCard = ({ palette, isHighlighted, onRemove }) => {
         ))}
       </div>
       <div style={styles.infoContainer}>
-        <span style={styles.paletteId}>#{palette.id.toString().slice(-4)}</span>
+        <span style={styles.paletteId}>#{palette.id}</span>
         <span style={styles.colorCodes}>{palette.colors.join(', ')}</span>
       </div>
       <button 
