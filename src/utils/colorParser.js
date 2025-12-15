@@ -1,3 +1,6 @@
+// Counter for ensuring unique IDs even with rapid successive calls
+let idCounter = 0;
+
 /**
  * Creates a unique key from color array for duplicate detection
  * @param {string[]} colors - Array of hex colors
@@ -27,13 +30,22 @@ export const extractColors = (url) => {
 };
 
 /**
+ * Generates a unique ID by combining timestamp with incrementing counter
+ * @returns {number} Unique identifier
+ */
+const generateUniqueId = () => {
+  idCounter++;
+  return Date.now() * 1000 + idCounter;
+};
+
+/**
  * Creates a new palette object
  * @param {string} url - Original URL
  * @param {string[]} colors - Extracted colors
  * @returns {import('../types/palette').Palette}
  */
 export const createPalette = (url, colors) => ({
-  id: Date.now(),
+  id: generateUniqueId(),
   url,
   colors,
   colorKey: makeColorKey(colors),
