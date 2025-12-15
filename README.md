@@ -1,17 +1,15 @@
-# React Smart ColorHunt Importer 🎨
+# React Smart ColorHunt Importer
 
-A smart, efficient React component for importing color palettes directly from ColorHunt.co links. Designed for speed ("Copy, Paste, Done") with automatic duplicate detection.
-
-> **Note:** The documentation and code structure of this repository were refined with the assistance of a Large Language Model (LLM) to ensure clarity, best practices, and robust error handling.
+A smart, efficient React component for importing color palettes directly from ColorHunt.co links. Designed for speed with automatic duplicate detection.
 
 ## Features
 
-*   **Auto-Detection:** Instantly parses `colorhunt.co` links upon pasting. No "Submit" button needed.
-*   **Duplicate Flash:** If a palette is already added, the input clears and the existing item flashes yellow to alert the user.
-*   **Visual Preview:** Immediately shows the 4-color strip of the imported palette.
-*   **Dual Modes:** 
-    *   `inline` (Default): Shows the full interface.
-    *   `widget`: Renders as a floating button (icon) that expands into a popup.
+- Auto-Detection: Instantly parses colorhunt.co links upon pasting. No submit button needed.
+- Duplicate Flash: If a palette is already added, the input clears and the existing item flashes yellow to alert the user.
+- Visual Preview: Immediately shows the 4-color strip of the imported palette.
+- Dual Modes: 
+  - inline (Default): Shows the full interface.
+  - widget: Renders as a floating button 🎨 that expands into a popup.
 
 ## Usage
 
@@ -36,10 +34,9 @@ function App() {
 ```
 
 ### 2. Widget Mode (Collapsible)
-Ideal for integrating into other websites where screen real estate is limited. It renders a small paint-palette button.
+Ideal for integrating into other websites where screen real estate is limited. It renders a small paint palette button.
 
 ```jsx
-// Renders a floating button. Clicking it opens the importer.
 <ColorHuntImporter variant="widget" onPalettesChange={handleUpdate} />
 ```
 
@@ -48,7 +45,7 @@ Ideal for integrating into other websites where screen real estate is limited. I
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `onPalettesChange` | `function` | `null` | Callback fired when list updates. Returns array of palette objects. |
-| `variant` | `string` | `'inline'` | `'inline'` for static display, `'widget'` for button/popup mode. |
+| `variant` | `string` | `'inline'` | 'inline' for static display, 'widget' for button/popup mode. |
 
 ## Data Structure
 The `onPalettesChange` callback returns an array of objects:
@@ -65,12 +62,25 @@ The `onPalettesChange` callback returns an array of objects:
 ]
 ```
 
+## Architecture
+
+The component is structured for maintainability:
+
+```
+src/
+├── ColorHuntImporter.jsx     - Main component (orchestration)
+├── components/               - Presentational components
+├── hooks/                    - Custom hooks (state management)
+├── utils/                    - Pure utility functions
+└── types/                    - JSDoc type definitions
+```
+
 ## Installation
 
 Since this is a single-component module, you can:
 
-1. **Copy directly:** Copy `src/ColorHuntImporter.jsx` into your React project
-2. **Clone the repo:** `git clone https://github.com/HarounMinhas/react-smart-colorhunt-importer.git`
+1. Copy directly: Copy the `src/` folder into your React project
+2. Clone the repo: `git clone https://github.com/HarounMinhas/react-smart-colorhunt-importer.git`
 
 ## Requirements
 
