@@ -1,4 +1,4 @@
-// Counter for ensuring unique IDs even with rapid successive calls
+// Counter for generating unique sequential IDs
 let idCounter = 0;
 
 /**
@@ -30,12 +30,12 @@ export const extractColors = (url) => {
 };
 
 /**
- * Generates a unique ID by combining timestamp with incrementing counter
+ * Generates a unique sequential ID
  * @returns {number} Unique identifier
  */
 const generateUniqueId = () => {
   idCounter++;
-  return Date.now() * 1000 + idCounter;
+  return idCounter;
 };
 
 /**
