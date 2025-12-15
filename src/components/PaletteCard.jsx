@@ -36,24 +36,35 @@ const PaletteCard = ({ palette, isHighlighted, onRemove }) => {
     },
     infoContainer: {
       flex: 1,
-      overflow: 'hidden'
+      overflow: 'hidden',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '2px'
     },
     paletteId: {
       fontSize: '12px',
       fontWeight: 'bold',
-      display: 'block'
+      display: 'block',
+      color: '#333'
     },
     colorCodes: {
       fontSize: '10px',
       color: '#666',
-      fontFamily: 'monospace'
+      fontFamily: 'monospace',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis'
     },
     deleteButton: {
       background: 'none',
       border: 'none',
       color: '#ff4d4d',
       cursor: 'pointer',
-      fontSize: '16px'
+      fontSize: '16px',
+      padding: '4px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
     }
   };
 
